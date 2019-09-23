@@ -1,8 +1,9 @@
 import {
   CART_ADD_REQUEST,
   CART_REMOVE,
-  CART_UPDATE_AMOUNT,
   CART_ADD_SUCCESS,
+  CART_UPDATE_AMOUNT_REQUEST,
+  CART_UPDATE_AMOUNT_SUCCESS,
 } from './actionTypes';
 
 export function addToCartRequest(id) {
@@ -26,9 +27,17 @@ export function removeFromCart(id) {
   };
 }
 
-export function updateAmount(id, amount) {
+export function updateAmountRequest(id, amount) {
   return {
-    type: CART_UPDATE_AMOUNT,
+    type: CART_UPDATE_AMOUNT_REQUEST,
+    id,
+    amount,
+  };
+}
+
+export function updateAmountSuccess(id, amount) {
+  return {
+    type: CART_UPDATE_AMOUNT_SUCCESS,
     id,
     amount,
   };
